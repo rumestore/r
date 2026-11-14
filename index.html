@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUME | Camisetas Deportivas</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #171717;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+}
+
+.hero {
+    background: linear-gradient(90deg, #080808, #333);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.boton {
+    display: inline-block;
+    background: #e6b800;
+    color: #111;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.catalogo {
+    padding: 55px 7%;
+    text-align: center;
+}
+
+.catalogo h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 12px #00000012;
+}
+
+.foto {
+    height: 210px;
+    background: linear-gradient(135deg, #202020, #555);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.producto h3 {
+    margin-bottom: 10px;
+}
+
+.precio {
+    color: #987500;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+.producto a {
+    display: block;
+    background: #111;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RUME</div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h1>VISTE TU PASIÓN</h1>
+    <p>Las mejores camisetas deportivas están en RUME.</p>
+    <a href="#catalogo" class="boton">VER CATÁLOGO</a>
+</section>
+
+<section class="catalogo" id="catalogo">
+    <h2>NUESTRAS CAMISETAS</h2>
+
+    <div class="productos">
+
+        <div class="producto">
+            <div class="foto">⚽</div>
+            <h3>Camiseta Real Madrid</h3>
+            <p>Modelo deportivo</p>
+            <div class="precio">S/ 89.90</div>
+            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20la%20camiseta%20Real%20Madrid">Comprar</a>
+        </div>
+
+        <div class="producto">
+            <div class="foto">⚽</div>
+            <h3>Camiseta Manchester United</h3>
+            <p>Modelo deportivo</p>
+            <div class="precio">S/ 89.90</div>
+            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20la%20camiseta%20Manchester%20United">Comprar</a>
+        </div>
+
+        <div class="producto">
+            <div class="foto">⚽</div>
+            <h3>Camiseta Barcelona</h3>
+            <p>Modelo deportivo</p>
+            <div class="precio">S/ 89.90</div>
+            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20la%20camiseta%20Barcelona">Comprar</a>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contacto">
+    <h2>RUME CAMISETAS DEPORTIVAS</h2>
+    <p>Vive el fútbol. Viste tu pasión.</p>
+    <p>© 2026 RUME - Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
