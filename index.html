@@ -1,181 +1,815 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RUME | Camisetas deportivas</title>
+
 <style>
-:root{--negro:#080808;--amarillo:#ffd21a;--gris:#f4f4f4;--texto:#171717}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--texto)}
-header{background:var(--negro);color:#fff;padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:5}
-.logo{font-size:30px;font-weight:900;font-style:italic;letter-spacing:2px}
+:root{
+  --negro:#080808;
+  --amarillo:#ffd21a;
+  --gris:#f4f4f4;
+  --texto:#171717
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:var(--texto)
+}
+
+header{
+  background:var(--negro);
+  color:#fff;
+  padding:17px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:5
+}
+
+.logo{
+  font-size:30px;
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:2px
+}
+
 .logo span{color:var(--amarillo)}
-nav{display:flex;gap:24px;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-.hero{min-height:280px;padding:55px 7%;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,#050505 0%,#161616 65%,#292929 100%)}
-.hero h1{font-size:clamp(38px,6vw,66px);font-weight:900;font-style:italic;line-height:.95}
+
+nav{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px
+}
+
+.hero{
+  min-height:280px;
+  padding:55px 7%;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:linear-gradient(90deg,#050505 0%,#161616 65%,#292929 100%)
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,66px);
+  font-weight:900;
+  font-style:italic;
+  line-height:.95
+}
+
 .hero h1 span{color:var(--amarillo)}
-.hero p{margin:16px 0 22px;font-size:18px}
-.btn{display:inline-block;border:0;border-radius:7px;background:var(--amarillo);color:#111;padding:13px 22px;font-weight:900;text-decoration:none;cursor:pointer}
+
+.hero p{
+  margin:16px 0 22px;
+  font-size:18px
+}
+
+.btn{
+  display:inline-block;
+  border:0;
+  border-radius:7px;
+  background:var(--amarillo);
+  color:#111;
+  padding:13px 22px;
+  font-weight:900;
+  text-decoration:none;
+  cursor:pointer
+}
+
 section{padding:38px 5%}
-.section-title{font-size:29px;margin-bottom:22px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
-.product-card{border:1px solid #e7e7e7;border-radius:12px;padding:14px;background:#fff;cursor:pointer;transition:.2s}
-.product-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px #00000012}
-.product-card img{width:100%;height:190px;object-fit:contain;background:#f5f5f5;border-radius:8px}
-.product-card h3{font-size:16px;margin:12px 0 6px}
-.price{font-weight:900;color:#d71920;font-size:20px}
-.detail{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:32px;align-items:start}
-.gallery{display:grid;grid-template-columns:74px 1fr;gap:12px}
-.thumbs{display:flex;flex-direction:column;gap:10px}
-.thumb{border:2px solid transparent;border-radius:8px;padding:3px;background:#f3f3f3;cursor:pointer}
+
+.section-title{
+  font-size:29px;
+  margin-bottom:22px
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:18px
+}
+
+.product-card{
+  border:1px solid #e7e7e7;
+  border-radius:12px;
+  padding:14px;
+  background:#fff;
+  cursor:pointer;
+  transition:.2s
+}
+
+.product-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px #00000012
+}
+
+.product-card img{
+  width:100%;
+  height:190px;
+  object-fit:contain;
+  background:#f5f5f5;
+  border-radius:8px
+}
+
+.product-card h3{
+  font-size:16px;
+  margin:12px 0 6px
+}
+
+.price{
+  font-weight:900;
+  color:#d71920;
+  font-size:20px
+}
+
+.detail{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+  gap:32px;
+  align-items:start
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:74px 1fr;
+  gap:12px
+}
+
+.thumbs{
+  display:flex;
+  flex-direction:column;
+  gap:10px
+}
+
+.thumb{
+  border:2px solid transparent;
+  border-radius:8px;
+  padding:3px;
+  background:#f3f3f3;
+  cursor:pointer
+}
+
 .thumb.active{border-color:#111}
-.thumb img{display:block;width:100%;height:74px;object-fit:cover;border-radius:5px}
-.main-photo-wrap{position:relative;overflow:hidden;border-radius:12px;background:#f4f4f4;min-height:420px;cursor:crosshair}
-#mainPhoto{width:100%;height:520px;object-fit:contain;display:block;transition:transform .12s;transform-origin:center}
-.magnifier{position:absolute;width:145px;height:145px;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 15px #0006;pointer-events:none;display:none;background-repeat:no-repeat;background-color:#fff}
-.zoom-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#111c;color:#fff;padding:8px 12px;border-radius:20px;font-size:12px;white-space:nowrap}
-.details h2{font-size:30px;margin:7px 0}
-.tag{display:inline-block;background:var(--amarillo);font-weight:900;padding:6px 10px;border-radius:20px;font-size:12px}
-.rating{color:#e7ae00;margin:9px 0}
-.big-price{font-size:32px;color:#d71920;font-weight:900;margin:14px 0}
-.old{font-size:17px;color:#777;text-decoration:line-through;margin-left:9px}
-label{display:block;font-weight:700;margin:16px 0 8px}
-.sizes{display:flex;gap:8px;flex-wrap:wrap}
-.size{border:1px solid #bbb;background:#fff;padding:9px 15px;border-radius:6px;cursor:pointer}
-.size.selected{background:#111;color:#fff;border-color:#111}
-.qty{display:flex;align-items:center;gap:12px}
-.qty button{width:32px;height:32px;border:1px solid #ccc;background:#fff;border-radius:6px;font-size:18px;cursor:pointer}
-#quantity{min-width:18px;text-align:center}
-.buy{display:block;text-align:center;background:#12a844;color:white;text-decoration:none;font-weight:900;padding:16px;border-radius:9px;margin-top:22px}
-.note{font-size:12px;color:#666;margin-top:12px;line-height:1.5}
-.benefits{background:#090909;color:#fff;display:flex;justify-content:space-around;gap:16px;flex-wrap:wrap;padding:22px 5%;font-weight:700}
-footer{background:#090909;color:#fff;text-align:center;padding:25px}
-.modal{display:none;position:fixed;inset:0;background:#000e;z-index:20;align-items:center;justify-content:center;padding:20px}
+
+.thumb img{
+  display:block;
+  width:100%;
+  height:74px;
+  object-fit:contain;
+  border-radius:5px
+}
+
+.main-photo-wrap{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  background:#f4f4f4;
+  min-height:420px;
+  cursor:crosshair
+}
+
+#mainPhoto{
+  width:100%;
+  height:520px;
+  object-fit:contain;
+  display:block
+}
+
+.magnifier{
+  position:absolute;
+  width:145px;
+  height:145px;
+  border:3px solid #fff;
+  border-radius:50%;
+  box-shadow:0 2px 15px #0006;
+  pointer-events:none;
+  display:none;
+  background-repeat:no-repeat;
+  background-color:#fff
+}
+
+.zoom-hint{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#111c;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:12px;
+  white-space:nowrap
+}
+
+.details h2{
+  font-size:30px;
+  margin:7px 0
+}
+
+.tag{
+  display:inline-block;
+  background:var(--amarillo);
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:12px
+}
+
+.rating{
+  color:#e7ae00;
+  margin:9px 0
+}
+
+.big-price{
+  font-size:32px;
+  color:#d71920;
+  font-weight:900;
+  margin:14px 0
+}
+
+.old{
+  font-size:17px;
+  color:#777;
+  text-decoration:line-through;
+  margin-left:9px
+}
+
+label{
+  display:block;
+  font-weight:700;
+  margin:16px 0 8px
+}
+
+.sizes{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+
+.size{
+  border:1px solid #bbb;
+  background:#fff;
+  padding:9px 15px;
+  border-radius:6px;
+  cursor:pointer
+}
+
+.size.selected{
+  background:#111;
+  color:#fff;
+  border-color:#111
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+
+.qty button{
+  width:32px;
+  height:32px;
+  border:1px solid #ccc;
+  background:#fff;
+  border-radius:6px;
+  font-size:18px;
+  cursor:pointer
+}
+
+#quantity{
+  min-width:18px;
+  text-align:center
+}
+
+.buy{
+  display:block;
+  text-align:center;
+  background:#12a844;
+  color:white;
+  text-decoration:none;
+  font-weight:900;
+  padding:16px;
+  border-radius:9px;
+  margin-top:22px
+}
+
+.note{
+  font-size:12px;
+  color:#666;
+  margin-top:12px;
+  line-height:1.5
+}
+
+.benefits{
+  background:#090909;
+  color:#fff;
+  display:flex;
+  justify-content:space-around;
+  gap:16px;
+  flex-wrap:wrap;
+  padding:22px 5%;
+  font-weight:700
+}
+
+footer{
+  background:#090909;
+  color:#fff;
+  text-align:center;
+  padding:25px
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000e;
+  z-index:20;
+  align-items:center;
+  justify-content:center;
+  padding:20px
+}
+
 .modal.open{display:flex}
-.modal-inner{position:relative;max-width:95vw;max-height:90vh}
-.modal img{max-width:90vw;max-height:85vh;object-fit:contain;background:#fff;border-radius:8px;touch-action:pan-y}
-.close{position:absolute;right:-12px;top:-12px;border:0;border-radius:50%;width:38px;height:38px;background:#fff;font-size:24px;cursor:pointer}
-@media(max-width:760px){header{flex-direction:column}nav{justify-content:center;gap:14px}.detail{grid-template-columns:1fr}.gallery{grid-template-columns:58px 1fr}.thumb img{height:60px}#mainPhoto{height:390px}.main-photo-wrap{min-height:390px}.hero{min-height:230px}}
+
+.modal-inner{
+  position:relative;
+  max-width:95vw;
+  max-height:90vh
+}
+
+.modal img{
+  max-width:90vw;
+  max-height:85vh;
+  object-fit:contain;
+  background:#fff;
+  border-radius:8px
+}
+
+.close{
+  position:absolute;
+  right:-12px;
+  top:-12px;
+  border:0;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  background:#fff;
+  font-size:24px;
+  cursor:pointer
+}
+
+@media(max-width:760px){
+
+  header{flex-direction:column}
+
+  nav{
+    justify-content:center;
+    gap:14px
+  }
+
+  .detail{grid-template-columns:1fr}
+
+  .gallery{grid-template-columns:58px 1fr}
+
+  .thumb img{height:60px}
+
+  #mainPhoto{height:390px}
+
+  .main-photo-wrap{min-height:390px}
+
+  .hero{min-height:230px}
+}
 </style>
 </head>
+
 <body>
+
 <header>
+
   <div class="logo">♛ RUME<span>.</span></div>
-  <nav><a href="#inicio">Inicio</a><a href="#catalogo">Catálogo</a><a href="#producto">Producto</a><a href="#contacto">Contacto</a></nav>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#producto">Producto</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
 </header>
 
 <section class="hero" id="inicio">
-  <div><h1>VISTE TU <span>PASIÓN</span></h1>
-  <p>Camisetas deportivas para vivir el fútbol.</p>
-  <a class="btn" href="#catalogo">VER CATÁLOGO →</a></div>
+
+  <div>
+    <h1>VISTE TU <span>PASIÓN</span></h1>
+
+    <p>Camisetas deportivas para vivir el fútbol.</p>
+
+    <a class="btn" href="#catalogo">VER CATÁLOGO →</a>
+  </div>
+
 </section>
 
 <section id="catalogo">
+
   <h2 class="section-title">Nuestras camisetas</h2>
+
   <div class="products">
-    <article class="product-card" onclick="selectProduct('real')">
-      <img src="real-lateral.jpg.png" alt="Detalle lateral de muestra">
-      <h3>Detalle lateral – muestra</h3><div class="price">S/ 89.90</div>
+
+    <article class="product-card" onclick="selectProduct('front')">
+
+      <img src="real-escudo.jpg" alt="Camiseta Real Madrid frontal">
+
+      <h3>Real Madrid – Vista frontal</h3>
+
+      <div class="price">S/ 89.90</div>
+
     </article>
-    <article class="product-card" onclick="selectProduct('real')">
-      <img src="real-escudo.jpg" alt="Detalle de escudo de muestra">
-      <h3>Detalle de escudo – muestra</h3><div class="price">S/ 89.90</div>
+
+    <article class="product-card" onclick="selectProduct('back')">
+
+      <img src="real-lateral.jpg.png" alt="Camiseta Real Madrid posterior">
+
+      <h3>Real Madrid – Vista posterior</h3>
+
+      <div class="price">S/ 89.90</div>
+
     </article>
+
   </div>
+
 </section>
 
 <section id="producto">
+
   <h2 class="section-title">Explora cada detalle</h2>
+
   <div class="detail">
+
     <div class="gallery">
+
       <div class="thumbs">
-        <button class="thumb active" data-src="real-frontal.jpg" aria-label="Vista frontal"><img src="real-frontal.jpg" alt=""></button>
-        <button class="thumb" data-src="real-lateral.jpg" aria-label="Vista lateral"><img src="real-lateral.jpg" alt=""></button>
-        <button class="thumb" data-src="real-escudo.jpg" aria-label="Detalle del escudo"><img src="real-escudo.jpg" alt=""></button>
-        <button class="thumb" data-src="real-tela.jpg" aria-label="Detalle de tela"><img src="real-tela.jpg" alt=""></button>
+
+        <button class="thumb active" data-src="real-escudo.jpg" aria-label="Vista frontal">
+
+          <img src="real-escudo.jpg" alt="Vista frontal">
+
+        </button>
+
+        <button class="thumb" data-src="real-lateral.jpg.png" aria-label="Vista posterior">
+
+          <img src="real-lateral.jpg.png" alt="Vista posterior">
+
+        </button>
+
       </div>
-      <div class="main-photo-wrap" id="photoWrap" title="Pasa el cursor para ampliar; toca para abrir el zoom">
-        <img id="mainPhoto" src="real-frontal.jpg" alt="Camiseta deportiva de muestra">
+
+      <div class="main-photo-wrap" id="photoWrap">
+
+        <img
+          id="mainPhoto"
+          src="real-escudo.jpg"
+          alt="Camiseta Real Madrid"
+        >
+
         <div class="magnifier" id="magnifier"></div>
-        <div class="zoom-hint">Pasa el cursor para usar la lupa · Toca para ampliar</div>
+
+        <div class="zoom-hint">
+          Pasa el cursor para usar la lupa · Toca para ampliar
+        </div>
+
       </div>
+
     </div>
+
     <div class="details">
-      <span class="tag">MODELO DE MUESTRA</span>
-      <h2>Camiseta deportiva RUME</h2>
-      <div class="rating">★★★★★ <span style="color:#222">Producto de demostración</span></div>
-      <div class="big-price">S/ 89.90 <span class="old">S/ 129.90</span></div>
-      <label>Selecciona tu talla:</label>
-      <div class="sizes">
-        <button class="size">S</button><button class="size selected">M</button><button class="size">L</button><button class="size">XL</button><button class="size">XXL</button>
+
+      <span class="tag">REAL MADRID</span>
+
+      <h2>Camiseta Real Madrid blanca</h2>
+
+      <div class="rating">
+        ★★★★★
+        <span style="color:#222">Producto deportivo</span>
       </div>
+
+      <div class="big-price">
+        S/ 89.90
+        <span class="old">S/ 129.90</span>
+      </div>
+
+      <label>Selecciona tu talla:</label>
+
+      <div class="sizes">
+
+        <button class="size">S</button>
+        <button class="size selected">M</button>
+        <button class="size">L</button>
+        <button class="size">XL</button>
+        <button class="size">XXL</button>
+
+      </div>
+
       <label>Cantidad:</label>
-      <div class="qty"><button id="minus">−</button><span id="quantity">1</span><button id="plus">+</button></div>
-      <a class="buy" id="buy" href="#" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-      <p class="note">Imágenes y precio de demostración. Sustituye estas fotos por las fotografías reales de tus productos antes de publicar la tienda. Cambia también el número de WhatsApp en el código.</p>
+
+      <div class="qty">
+
+        <button id="minus">−</button>
+
+        <span id="quantity">1</span>
+
+        <button id="plus">+</button>
+
+      </div>
+
+      <a class="buy" id="buy" href="#" target="_blank" rel="noopener">
+
+        Comprar por WhatsApp
+
+      </a>
+
+      <p class="note">
+        Consulta disponibilidad de tallas, precio y entrega directamente por WhatsApp.
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
-<div class="benefits"><span>🏆 Calidad deportiva</span><span>⚡ Atención rápida</span><span>🛡 Compra segura</span><span>⚽ Pasión por el fútbol</span></div>
-<footer id="contacto"><h3>RUME CAMISETAS DEPORTIVAS</h3><p>Viste tu pasión.</p><small>© 2026 RUME</small></footer>
+<div class="benefits">
 
-<div class="modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-  <div class="modal-inner"><button class="close" id="closeModal" aria-label="Cerrar">×</button><img id="modalImage" src="" alt="Fotografía ampliada de la camiseta"></div>
+  <span>🏆 Calidad deportiva</span>
+  <span>⚡ Atención rápida</span>
+  <span>🛡 Compra segura</span>
+  <span>⚽ Pasión por el fútbol</span>
+
+</div>
+
+<footer id="contacto">
+
+  <h3>RUME CAMISETAS DEPORTIVAS</h3>
+
+  <p>Viste tu pasión.</p>
+
+  <p>WhatsApp: +51 979 557 544</p>
+
+  <small>© 2026 RUME</small>
+
+</footer>
+
+<div class="modal" id="zoomModal" role="dialog" aria-modal="true">
+
+  <div class="modal-inner">
+
+    <button class="close" id="closeModal">×</button>
+
+    <img id="modalImage" src="" alt="Camiseta ampliada">
+
+  </div>
+
 </div>
 
 <script>
-const mainPhoto=document.getElementById('mainPhoto');
-const wrap=document.getElementById('photoWrap');
-const magnifier=document.getElementById('magnifier');
-const modal=document.getElementById('zoomModal');
-const modalImage=document.getElementById('modalImage');
-document.querySelectorAll('.thumb').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.thumb').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    mainPhoto.src=btn.dataset.src;
+
+const mainPhoto = document.getElementById('mainPhoto');
+
+const wrap = document.getElementById('photoWrap');
+
+const magnifier = document.getElementById('magnifier');
+
+const modal = document.getElementById('zoomModal');
+
+const modalImage = document.getElementById('modalImage');
+
+
+/* CAMBIAR FOTOGRAFÍAS */
+
+function changePhoto(src, label){
+
+  mainPhoto.src = src;
+
+  mainPhoto.alt = label;
+
+  magnifier.style.display = 'none';
+
+  document.querySelectorAll('.thumb').forEach(btn => {
+
+    btn.classList.toggle('active', btn.dataset.src === src);
+
   });
+
+}
+
+
+document.querySelectorAll('.thumb').forEach(btn => {
+
+  btn.addEventListener('click', () => {
+
+    changePhoto(btn.dataset.src, btn.getAttribute('aria-label'));
+
+  });
+
 });
+
+
+/* LUPA DE AMPLIACIÓN */
+
 function moveLens(e){
-  if(e.pointerType==='touch') return;
-  const r=wrap.getBoundingClientRect();
-  const x=Math.max(0,Math.min(e.clientX-r.left,r.width));
-  const y=Math.max(0,Math.min(e.clientY-r.top,r.height));
-  const size=145;
-  magnifier.style.display='block';
-  magnifier.style.left=(x-size/2)+'px';
-  magnifier.style.top=(y-size/2)+'px';
-  magnifier.style.backgroundImage=`url("${mainPhoto.src}")`;
-  magnifier.style.backgroundSize=(r.width*2.5)+'px '+(r.height*2.5)+'px';
-  magnifier.style.backgroundPosition=`-${x*2.5-size/2}px -${y*2.5-size/2}px`;
+
+  if(e.pointerType === 'touch') return;
+
+  const r = wrap.getBoundingClientRect();
+
+  const x = Math.max(0, Math.min(e.clientX - r.left, r.width));
+
+  const y = Math.max(0, Math.min(e.clientY - r.top, r.height));
+
+  const size = 145;
+
+  magnifier.style.display = 'block';
+
+  magnifier.style.left = (x - size / 2) + 'px';
+
+  magnifier.style.top = (y - size / 2) + 'px';
+
+  magnifier.style.backgroundImage = `url("${mainPhoto.src}")`;
+
+  magnifier.style.backgroundSize = (r.width * 2.5) + 'px ' + (r.height * 2.5) + 'px';
+
+  magnifier.style.backgroundPosition =
+    `-${x * 2.5 - size / 2}px -${y * 2.5 - size / 2}px`;
+
 }
-wrap.addEventListener('pointermove',moveLens);
-wrap.addEventListener('pointerleave',()=>magnifier.style.display='none');
-function openZoom(){modalImage.src=mainPhoto.src;modal.classList.add('open')}
-wrap.addEventListener('click',openZoom);
-document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
-modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
-document.querySelectorAll('.size').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.size').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');
-}));
-let qty=1;const q=document.getElementById('quantity');
-document.getElementById('minus').onclick=()=>{qty=Math.max(1,qty-1);q.textContent=qty};
-document.getElementById('plus').onclick=()=>{qty++;q.textContent=qty};
-const WHATSAPP='51979557544'; // Reemplaza por tu número real, con código de país y sin + ni espacios.
+
+wrap.addEventListener('pointermove', moveLens);
+
+wrap.addEventListener('pointerleave', () => {
+
+  magnifier.style.display = 'none';
+
+});
+
+
+/* ZOOM AL HACER CLIC */
+
+function openZoom(){
+
+  modalImage.src = mainPhoto.src;
+
+  modal.classList.add('open');
+
+}
+
+wrap.addEventListener('click', openZoom);
+
+
+document.getElementById('closeModal').addEventListener('click', () => {
+
+  modal.classList.remove('open');
+
+});
+
+
+modal.addEventListener('click', e => {
+
+  if(e.target === modal){
+
+    modal.classList.remove('open');
+
+  }
+
+});
+
+
+document.addEventListener('keydown', e => {
+
+  if(e.key === 'Escape'){
+
+    modal.classList.remove('open');
+
+  }
+
+});
+
+
+/* SELECCIÓN DE TALLAS */
+
+document.querySelectorAll('.size').forEach(btn => {
+
+  btn.addEventListener('click', () => {
+
+    document.querySelectorAll('.size').forEach(b => {
+
+      b.classList.remove('selected');
+
+    });
+
+    btn.classList.add('selected');
+
+    updateBuy();
+
+  });
+
+});
+
+
+/* CANTIDAD */
+
+let qty = 1;
+
+const q = document.getElementById('quantity');
+
+
+document.getElementById('minus').onclick = () => {
+
+  qty = Math.max(1, qty - 1);
+
+  q.textContent = qty;
+
+  updateBuy();
+
+};
+
+
+document.getElementById('plus').onclick = () => {
+
+  qty++;
+
+  q.textContent = qty;
+
+  updateBuy();
+
+};
+
+
+/* WHATSAPP RUME */
+
+const WHATSAPP = '51979557544';
+
 function updateBuy(){
-  const size=document.querySelector('.size.selected')?.textContent||'M';
-  const msg=encodeURIComponent(`Hola RUME, quiero consultar por la camiseta deportiva de muestra. Talla: ${size}. Cantidad: ${qty}.`);
-  document.getElementById('buy').href=`https://wa.me/${WHATSAPP}?text=${msg}`;
+
+  const size = document.querySelector('.size.selected')?.textContent || 'M';
+
+  const msg = encodeURIComponent(
+
+    `Hola RUME, estoy interesado/a en la camiseta del Real Madrid. Talla: ${size}. Cantidad: ${qty}. ¿Me brindan más información?`
+
+  );
+
+  document.getElementById('buy').href =
+
+    `https://wa.me/${WHATSAPP}?text=${msg}`;
+
 }
-document.querySelectorAll('.size').forEach(b=>b.addEventListener('click',updateBuy));
-document.getElementById('minus').addEventListener('click',updateBuy);
-document.getElementById('plus').addEventListener('click',updateBuy);
+
 updateBuy();
-function selectProduct(){document.getElementById('producto').scrollIntoView({behavior:'smooth'})}
+
+
+/* SELECCIÓN DESDE EL CATÁLOGO */
+
+function selectProduct(view){
+
+  document.getElementById('producto').scrollIntoView({
+
+    behavior:'smooth'
+
+  });
+
+  if(view === 'back'){
+
+    changePhoto('real-lateral.jpg.png', 'Vista posterior');
+
+  }else{
+
+    changePhoto('real-escudo.jpg', 'Vista frontal');
+
+  }
+
+}
+
 </script>
+
 </body>
 </html>
+
